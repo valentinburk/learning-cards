@@ -50,6 +50,7 @@ main {
 .back {
   position: absolute;
   backface-visibility: hidden;
+  padding: 100px;
 }
 
 .back {
@@ -58,4 +59,15 @@ main {
 
 .flipped {
   transform: rotateY(180deg);
+}
+
+/* Responsiveness */
+@media screen and (max-width: 600px) {
+  .front {
+    padding: 30px;
+  }
+
+  .back {
+    padding: 10px;
+  }
 }
