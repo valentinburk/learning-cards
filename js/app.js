@@ -22,8 +22,7 @@ $(document).ready(function() {
   });
 
 
-  $('.swiper-slide').click(function() {
-    console.log($(this));
+  $('.card').click(function() {
     $(this).toggleClass('flipped');
   });
 });
@@ -34,18 +33,31 @@ $(document).ready(function() {
  * @returns {Element} Card DOM element
  */
 function createArticle(question) {
-  const article = createElementWithClass('article', 'card swiper-slide');
-  const front = createElementWithClass('div', 'front');
-  const back = createElementWithClass('div', 'back');
+  const article = createElementWithClass('article', 'swiper-slide');
+  const card = createElementWithClass('div', 'card');
 
+  // Generate front side of card
+  const front = createElementWithClass('div', 'front');
+  const frontContent = createElementWithClass('div', 'card-content');
   const title = createElementWithClass('h2');
 
   title.innerHTML = question.q;
-  back.innerHTML = question.a;
 
-  front.appendChild(title);
-  article.appendChild(front);
-  article.appendChild(back);
+  frontContent.appendChild(title);
+  front.appendChild(frontContent);
+  card.appendChild(front);
+
+  // Generate back side of card
+  const back = createElementWithClass('div', 'back');
+  const backContent = createElementWithClass('div', 'card-content');
+
+  backContent.innerHTML = question.a;
+
+  back.appendChild(backContent);
+  card.appendChild(back);
+
+  // Append card itself to card block
+  article.appendChild(card);
 
   return article;
 }
