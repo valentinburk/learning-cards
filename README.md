@@ -8,6 +8,8 @@ Simple online learning cards for C# exam preparation. Can be used with any other
 
 Working version can be found on https://burk.in/learn/
 
+Swipe left/right for next/previous question and click or tap on card to flip it and see correct answer.
+
 To specify exact topic of learning, use `t` in URL query and specify your topic. For example `https://burk.in/learn?t=threading`. At this moment following topics are available:
 1. serialization
 2. threading
