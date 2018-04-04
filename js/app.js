@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  const questions = shuffle(QUESTIONS);
+  const questions = getQuestions();
   const fragment = document.createDocumentFragment();
   const wrapper = document.querySelector('.swiper-wrapper');
 
@@ -63,6 +63,21 @@ function createArticle(question) {
 }
 
 /**
+ * @description Returns the shuffled questions of type profided in query
+ * @returns Array with questions
+ */
+function getQuestions() {
+  const type = getQueryValue('t');
+  let questions = shuffle(QUESTIONS);
+
+  if (type !== null) {
+    questions = questions.filter(q => q.t === type);
+  }
+
+  return questions;
+}
+
+/**
  * @description Shuffles array
  * @param {Array} a Items An array containing the items
  * @returns {Array} Shuffled array of same content
@@ -92,4 +107,21 @@ function createElementWithClass(element, css) {
   }
 
   return e;
+}
+
+/**
+ * @description Returns value of specified parameter from url query
+ * @param {string} name Name of query parameter
+ * @returns {string} Value of parameter
+ */
+function getQueryValue(name) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+
+    const regex = new RegExp(`[?&]${name}(=([^&#]*)|&|#|$)`);
+    const results = regex.exec(window.location.href);
+
+    if (!results) return null;
+    if (!results[2]) return '';
+
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
