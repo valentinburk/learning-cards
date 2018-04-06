@@ -39,11 +39,14 @@ function createArticle(question) {
   // Generate front side of card
   const front = createElementWithClass('div', 'front');
   const frontContent = createElementWithClass('div', 'card-content');
-  const title = createElementWithClass('h2');
+  const title = createElementWithClass('p', 'front-text');
+  const topic = createElementWithClass('p', 'topic');
 
   title.innerHTML = question.q;
+  topic.innerHTML = question.t;
 
   frontContent.appendChild(title);
+  frontContent.appendChild(topic);
   front.appendChild(frontContent);
   card.appendChild(front);
 
