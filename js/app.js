@@ -67,11 +67,12 @@ function createArticle(question) {
  * @returns Array with questions
  */
 function getQuestions() {
-  const type = getQueryValue('t');
+  const query = getQueryValue('t');
   let questions = shuffle(QUESTIONS);
 
-  if (type !== null) {
-    questions = questions.filter(q => q.t === type);
+  if (query !== null) {
+    const types = query.split(',')
+    questions = questions.filter(q => types.includes(q.t));
   }
 
   return questions;

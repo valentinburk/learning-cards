@@ -710,14 +710,14 @@ const QUESTIONS = [{
     t: `debug`
   },
   {
-    q: `You have coniguration file with switch info: <add name="mySwitch" value=
-        "Warning" />. Which Trace Switch class you should create?`,
+    q: `You have coniguration file with switch info: &#60;add name="mySwitch" value=
+        "Warning" /&#62;. Which Trace Switch class you should create?`,
     a: `SourceSwitch or Custom`,
     t: `debug`
   },
   {
-    q: `You have coniguration file with switch info: <add name="mySwitch" value=
-        "True" />. Which Trace Switch class you should create?`,
+    q: `You have coniguration file with switch info: &#60;add name="mySwitch" value=
+        "True" /&#62;. Which Trace Switch class you should create?`,
     a: `BooleanSwitch or Custom`,
     t: `debug`
   },
@@ -753,7 +753,7 @@ const QUESTIONS = [{
         new instance of Thread?`,
     a: `Thread does not include any safeguards to prevent you from creating too many
         threads for current systems. It is expensive to create new threads. On the
-        other hand QueueUserWorkItem() method reuses threads and thus amortizes the 
+        other hand QueueUserWorkItem() method reuses threads and thus amortizes the
         cost.`,
     t: `threading`
   }

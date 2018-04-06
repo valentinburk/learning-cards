@@ -10,7 +10,12 @@ Working version can be found on https://burk.in/learn/
 
 Swipe left/right for next/previous question and click or tap on card to flip it and see correct answer.
 
-To specify exact topic of learning, use `t` in URL query and specify your topic. For example `https://burk.in/learn?t=threading`. At this moment following topics are available:
+To specify exact topic of learning, use `t` in URL query and specify your topic. For example `https://burk.in/learn?t=threading`.
+
+Also it is possible to indicate several comma-separated topics. For example
+`https://burk.in/learn?t=debug,security`
+
+At this moment following topics are available:
 1. serialization
 2. threading
 3. assemblies
@@ -24,7 +29,7 @@ Just clone this project, replace questions with your own and it is ready to use.
 
 ## Contents
 
-This game is written with HTML, CSS and JavaScript.
+This project is written with HTML, CSS and JavaScript.
 
 ## Contributions
 
