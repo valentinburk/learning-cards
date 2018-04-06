@@ -70,12 +70,18 @@ function createArticle(question) {
  * @returns Array with questions
  */
 function getQuestions() {
-  const query = getQueryValue('t');
+  const include = getQueryValue('t');
+  const exclude = getQueryValue('e');
   let questions = shuffle(QUESTIONS);
 
-  if (query !== null) {
-    const types = query.split(',')
-    questions = questions.filter(q => types.includes(q.t));
+  if (include !== null) {
+    const includeTopics = include.split(',');
+    questions = questions.filter(q => includeTopics.includes(q.t));
+  }
+
+  if (exclude !== null) {
+    const excludeTopics = exclude.split(',');
+    questions = questions.filter(q => !excludeTopics.includes(q.t));
   }
 
   return questions;
