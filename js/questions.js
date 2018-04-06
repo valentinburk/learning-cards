@@ -528,18 +528,233 @@ const QUESTIONS = [{
     t: `other`
   },
   {
-    q: ``,
-    a: ``,
-    t: ''
+    q: `You need to transfer encrypted data. How the receiver can be sure data was
+        not modified in transit?`,
+    a: `1) You generate hash of data<br>2) Encrypt hash with your private key<br>
+        3) Send`,
+    t: `security`
   },
   {
-    q: ``,
-    a: ``,
-    t: ''
+    q: `You're receiving encrypted data and want to be sure it wasn't modified in
+        transit. Which key do you use to decrypt the hash?`,
+    a: `You use the sender's PUBLIC key.`,
+    t: `security`
   },
   {
-    q: ``,
-    a: ``,
-    t: ''
+    q: `You're designing Dispose Pattern. What two thing <strong>true</strong>
+        boolean parameter in Dispose(true) means?`,
+    a: `1) Method is calling from IDisposable.Dispose()<br>2) It is safe to dispose
+        unmanaged objects`,
+    t: `other`
+  },
+  {
+    q: `What the AggregateException.Flatten() method for?`,
+    a: `It is because some of the inner exceptions might also be instances of
+        AggregateException. The method flattens them before processing`,
+    t: `other`
+  },
+  {
+    q: `What CountdownEvent class does?`,
+    a: `This class unblocks waiting thread after the Signal() method is called a
+        predetermined number of times`,
+    t: `threading`
+  },
+  {
+    q: `You have delegate class declared:<br>delegate int Adder(int x, int y);
+        <br>How to declare a new delegate instance with anonymous method using
+        delegate keyword (without lambda)?`,
+    a: `Adder adder = delegate(int i, int j) { return i + y; }`,
+    t: `other`
+  },
+  {
+    q: `How to create a COM Type Library that exposes managed code to COM?`,
+    a: `<p><strong>tlbexp acme.dll</strong><br>Type Library Exporter handles this.
+        It will create a file named acme.tlb that can be registered with the
+        Operating System and then called by a COM application</p>
+        <p>Second way is to call <strong>regasm /tlb acme.dll</strong>. It will not only
+        create Type Library but also register it.</p>`,
+    t: `other`
+  },
+  {
+    q: `How to register assembly as COM Type Library?`,
+    a: `regasm acme.dll`,
+    t: `other`
+  },
+  {
+    q: `How to make types in the assembly not visible to COM objects by default?`,
+    a: `Mark with attribute [assembly: ComVisible(false)]. It will make all types in
+        library not visible by default. But it is still possible to mark specific
+        types with [ComVisible(true)] to make visible only specific types.`,
+    t: `other`
+  },
+  {
+    q: `What is required to do in .NET assembly to expose types as COM interfaces?`,
+    a: `It is required to apply attribute [assembly: Guid("...")] to assembly and
+        optionally to types. Only assemblies and types. Methods etc NOT allowed.`,
+    t: `other`
+  },
+  {
+    q: `Four steps of create and install self-signed SLL on development machine?`,
+    a: `1. Generate a self-signed root authority certificate and private key file<br>
+        2. Generate a certificate signed by a root authority certificate<br>
+        3. Import the certificate in Trusted Root Certification Authorities<br>
+        4. Configure the clientCertificate setting in the configuration file`,
+    t: `security`
+  },
+  {
+    q: `How to configure app so that assembly compiled agains .NET Framework 2.0
+        uses .NET Framework 4.0?`,
+    a: `in acme.exe.config section <strong>"configuration" &#62; "startup"</strong>
+        &#60;supportedRuntime version="v4.0" /&#62;`,
+    t: `assemblies`
+  },
+  {
+    q: `Can you initialize fields in structs like this: public int X = 0;`,
+    a: `Not allowed, you should use<br>public int X;<br>.NET Framework will automatically
+        assign default value in default constructor.<br>If the struct is initialized
+        without <strong>new</strong> keyword, like <strong>Point x;<strong> then you should
+        initialize <strong>x.X = 0;</strong> manually`,
+    t: `other`
+  },
+  {
+    q: `How to inform Garbage Collector about unmanaged memory usage?`,
+    a: `GC.AddMemoryPressure(bufferSize:int);<br>GC.RemoveMemoryPressure(bufferSize:int);`,
+    t: `other`
+  },
+  {
+    q: `AES is symmetric or assymetric?`,
+    a: `Symmetric`,
+    t: `security`
+  },
+  {
+    q: `RSA is symmetric or assymetric`,
+    a: `Assymetric`,
+    t: `security`
+  },
+  {
+    q: `Rijndael is symmetric or assymetric`,
+    a: `Symmetric`,
+    t: `security`
+  },
+  {
+    q: `Symmetric or assymetric encryption is better for encrypting huge amount of data`,
+    a: `Symmetric`,
+    t: `security`
+  },
+  {
+    q: `DES is symmetric or assymetric`,
+    a: `symmetric`,
+    t: `security`
+  },
+  {
+    q: `RC2 is symmetric or assymetric`,
+    a: `symmetric`,
+    t: `security`
+  },
+  {
+    q: `Which crypto algorithm is recommended for data privacy by .NET?`,
+    a: `AES`,
+    t: `security`
+  },
+  {
+    q: `Which crypto algorithm is recommended for data exchange by .NET?`,
+    a: `RSA and ECDiffieHellman`,
+    t: `security`
+  },
+  {
+    q: `ECDiffieHellman is symmetric or assymetric`,
+    a: `Assymetric`,
+    t: `security`
+  },
+  {
+    q: `Why do you need Trace Switches?`,
+    a: `Trace Switches could be useful in filtering information. You might want to see
+        only Error Level messages in one module and all message up from Verbose Level
+        in other module.`,
+    t: `debug`
+  },
+  {
+    q: `Where and when Trace Switched are configured?`,
+    a: `In configuration file at the any random moment of time. In section <strong>
+        "configuration" &#62; "system.diagnostics" &#62; "switches"</strong>`,
+    t: `debug`
+  },
+  {
+    q: `Which classes are used with Trace Switches`,
+    a: `1) TraceSwitch<br>2) BooleanSwitch<br>3) SourceSwitch<br>
+        4) Use created class inherited from Switch abstract class`,
+    t: `debug`
+  },
+  {
+    q: `Four levels of Trace Levels when using TraceSwitch`,
+    a: `1) TraceSwitch.TraceError<br>2) TraceSwitch.TraceWarning<br>3) TraceSwitch.TraceInfo
+        <br>4) TraceSwitch.TraceVerbose`,
+    t: `debug`
+  },
+  {
+    q: `Eight levels of Source Levels when using SourceSwitch`,
+    a: `1) SourceSwitch.ActivityTracking<br>2) SourceSwitch.All<br>3)
+        SourceSwitch.Critical<br>4) SourceSwitch.Error<br>5) SourceSwitch.Information
+        <br>6) SourceSwitch.Off<br>7) SourceSwitch.Verbose<br>8) SourceSwitch.Warning`,
+    t: `debug`
+  },
+  {
+    q: `Which steps to perform to implement Trace Switches?`,
+    a: `1) Create class instance<br>2) Add info to configuration file`,
+    t: `debug`
+  },
+  {
+    q: `You have coniguration file with switch info: <add name="mySwitch" value=
+        "Data Access" />. Which Trace Switch class you should create?`,
+    a: `Custom class that inherits from Switch`,
+    t: `debug`
+  },
+  {
+    q: `You have coniguration file with switch info: <add name="mySwitch" value=
+        "Warning" />. Which Trace Switch class you should create?`,
+    a: `SourceSwitch or Custom`,
+    t: `debug`
+  },
+  {
+    q: `You have coniguration file with switch info: <add name="mySwitch" value=
+        "True" />. Which Trace Switch class you should create?`,
+    a: `BooleanSwitch or Custom`,
+    t: `debug`
+  },
+  {
+    q: `What is Switch.Level property for?`,
+    a: `It returns an integer that represents the numberic value of the switch.
+        If value set to string the Level property will not return anything`,
+    t: `debug`
+  },
+  {
+    q: `What is Switch.Attributes property for?`,
+    a: `It allows to retrieve custom attribute values from custom switch`,
+    t: `debug`
+  },
+  {
+    q: `How to set debugger to hit breakpoint only on specific thread's name`,
+    a: `Use Breakpoint Filter or Breakpoint Condition debugger property`,
+    t: `debug`
+  },
+  {
+    q: `How to implement IComparable`,
+    a: `- Override the GetHashCode() method<br>- Override the Equals() method<br>
+        - Implement the CompareTo() method.`,
+    t: `other`
+  },
+  {
+    q: `Could you apply partial keyword to a method?`,
+    a: `Yes`,
+    t: `other`
+  },
+  {
+    q: `Why it is recommended to use ThreadPool.QueueUserWorkItem() instead of creating
+        new instance of Thread?`,
+    a: `Thread does not include any safeguards to prevent you from creating too many
+        threads for current systems. It is expensive to create new threads. On the
+        other hand QueueUserWorkItem() method reuses threads and thus amortizes the 
+        cost.`,
+    t: `threading`
   }
 ]

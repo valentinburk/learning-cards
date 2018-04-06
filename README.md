@@ -14,6 +14,8 @@ To specify exact topic of learning, use `t` in URL query and specify your topic.
 1. serialization
 2. threading
 3. assemblies
+4. security
+5. debug
 4. other
 
 ### Your own version
