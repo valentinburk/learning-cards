@@ -7,27 +7,31 @@
 
   <title>Learning Cards</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/css/swiper.min.css">
   <link rel="stylesheet" href="css/app.css?v=4">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.0/js/swiper.min.js"></script>
-  <script src="js/questions.js?v=8"></script>
-  <script src="js/app.js?v=6"></script>
+  <script src="js/setup.js?v=1"></script>
 </head>
 
 <body>
   <main>
-    <!-- Swiper -->
-    <section class="cards swiper-container">
-      <div class="swiper-wrapper">
-
+    <!-- Topics selector -->
+    <section class="topics">
+      <article class="parameter" data-topic="assemblies">Assemblies</article>
+      <article class="parameter" data-topic="debug">Debug</article>
+      <article class="parameter" data-topic="security">Security</article>
+      <article class="parameter" data-topic="serialization">Serialization</article>
+      <article class="parameter" data-topic="threading">Multithreading</article>
+      <article class="parameter" data-topic="other">Other</article>
+    </section>
+    <section class="start">
+      <div class="information">
+        <span>Start learing topics: </span>
+        <span class="summary-selected">all</span>
       </div>
-      <!-- Progress Bar -->
-      <div class="swiper-pagination"></div>
-      <!-- Arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+      <div class="start-button">
+        Start
+      </div>
     </section>
   </main>
 </body>

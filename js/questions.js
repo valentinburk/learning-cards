@@ -704,8 +704,8 @@ const QUESTIONS = [{
     t: `debug`
   },
   {
-    q: `You have coniguration file with switch info: <add name="mySwitch" value=
-        "Data Access" />. Which Trace Switch class you should create?`,
+    q: `You have coniguration file with switch info: &#60;add name="mySwitch" value=
+        "Data Access" /&#62;. Which Trace Switch class you should create?`,
     a: `Custom class that inherits from Switch`,
     t: `debug`
   },
@@ -756,5 +756,80 @@ const QUESTIONS = [{
         other hand QueueUserWorkItem() method reuses threads and thus amortizes the
         cost.`,
     t: `threading`
+  },
+  {
+    q: `Explain the process of implementing Custom Formatter (5 steps)`,
+    a: `<p>1) Call the <strong>String.Format()</strong> method, providing an instance of any class
+        that implements <strong>IFormatProvider.</strong></p><p>2) The <strong>String.Format()</strong> method calls the
+        <strong>GetFormat()</strong> method of the <strong>IFormatProvider</strong> instance, passing the <strong>ICustomFormatter</strong>
+        datatype as the argument.</p><p>3) If the <strong>IFormatProvider</strong> instance can provide
+        an instance of the datatype argument, it returns an instance of that type;
+        otherwise, it returns null. NOTE: The class that implements <strong>IFormatProvider</strong>
+        is generally the same class that implements <strong>ICustomFormatter</strong>, so the
+        <strong>GetFormat()</strong> method includes the line <strong>"return this;"</strong>.</p><p>4) The <strong>String.Format()</strong>
+        method calls the <strong>Format()</strong> method of the <strong>ICustomFormatter</strong> instance,
+        passing the format string, the object to be formatted, and the <strong>IFormatProvider</strong>
+        instance.</p><p>5) The <strong>Format()</strong> method of the <strong>ICustomFormatter()</strong> instance
+        returns the string representation of the object to the <strong>String.Format()</strong>
+        method. This string is incorporated into the larger format string of the
+        call to <strong>String.Format()</strong> method.`,
+    t: `other`
+  },
+  {
+    q: `You're implementing custom formatter. Instance of which class should be
+        provided to String.Format()?`,
+    a: `Instance of IFormatProvider`,
+    t: `other`
+  },
+  {
+    q: `You're implementing custom formatter. Which method is called by String.Format()?`,
+    a: `GetFormat() method of the IFormatProvider instance passing the ICustomFormatter
+        datatype as the argument`,
+    t: `other`
+  },
+  {
+    q: `You're implementing custom formatter. What is the name and what is usually
+        returned from the IFormatProvider implementation method and why?`,
+    a: `The name is IFormatProvider.GetFormat()<br> It usually return this, because
+        same class that implements IFormatProvider usually implements ICustomFormatter,
+        which instance must be passed into GetFormat()`,
+    t: `other`
+  },
+  {
+    q: `You're implementing custom formatter. What is the signature and return type of the
+        ICustomFormatter implementation?`,
+    a: `string ICustomFormatter.Format(string format, object arg, IFormatProvider provider)`,
+    t: `other`
+  },
+  {
+    q: `You have some sensitive data. How to protect it by modifying it?`,
+    a: `Use ProtectMemory.Protect(data, scope). It encrypts data in memory. In <strong>
+        data</strong> argument you pass byte array of data and this method is
+        encrypting it by replacing all bytes inside of this array with encrypted one.`,
+    t: `security`
+  },
+  {
+    q: `You have some sensitive data. How to protect it WITHOUT modifying it?`,
+    a: `Use ProtectData.Protect(data, optionalEntropy, scope). In <strong>
+        data</strong> argument you pass byte array of data and this method is
+        encrypting it by returning a NEW array of bytes.`,
+    t: `security`
+  },
+  {
+    q: `What are all DataProtectionScopes you use with ProtectData class?`,
+    a: `DataProtectionScope.CurrentUser and DataProtectionScope.LocalMachine`,
+    t: `security`
+  },
+  {
+    q: `What are all MemoryProtectionScopes you use with ProtectMemory class?`,
+    a: `MemoryProtectionScope.SameProcess<br>MemoryProtectionScope.CrossProcess<br>
+        MemoryProtectionScope.SameLogon`,
+    t: `security`
+  },
+  {
+    q: `Name two classes representing DPAPI`,
+    a: `Data Protection Application Programming Interface is represented by:<br>
+        1) ProtectData class<br>2) ProtectMemory class`,
+    t: `security`
   }
 ]

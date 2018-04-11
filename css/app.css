@@ -13,6 +13,46 @@ body,
 main {
   position: relative;
   height: 100%;
+  text-align: center;
+}
+
+/* Setup section */
+.topics {
+  margin-top: 50px;
+}
+
+.parameter {
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 10px 0;
+  background-color: #fff;
+  cursor: default;
+}
+
+.parameter-selected {
+  background-color: #b2e3ff;
+}
+
+.summary-selected {
+  display: block;
+}
+
+.start {
+  padding: 30px 0;
+  background-color: #f7ffd6;
+}
+
+.start-button {
+  background-color: #99da4f;
+  margin: 15px 15px 0;
+  padding: 15px;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #8bc747;
 }
 
 /* Swiper */
@@ -26,7 +66,6 @@ main {
 }
 
 .swiper-slide {
-  text-align: center;
   font-size: 18px;
 }
 
@@ -93,6 +132,10 @@ main {
 
 /* Responsiveness */
 @media screen and (max-width: 600px) {
+  .topics {
+    margin-top: 10px;
+  }
+
   .card-content {
     padding: 10px;
   }
